@@ -16,26 +16,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+function onSucess(position) {
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
+var lat = position.coords.latitude;
+var lang =  position.coords.longitude;
+var mylatlng = new google.maps.LatLng(lat,lang);
+var myOption = {zoom: 15, center:mylatlng};
+var map = new google.maps.Map(document.getElementById('map-canvas'),myOption);
+ var maker = new google.maps.maker({position: mylatlng,map: map});
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+}
 
+function onError(error) {
+    alert(error.message);
+}
 
+function showLocation() {
+    navigator.geolocation.getCurrentPosition(onSucess,onError,{timeout : 3000});
+}
 
-app.initialize();

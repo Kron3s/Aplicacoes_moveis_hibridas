@@ -1,3 +1,5 @@
 #Exclui todo o conteudo dos diretorio platforms e plugins
 Camera/platforms
 Camera/plugins
+GPS/platforms
+GPS/plugins
