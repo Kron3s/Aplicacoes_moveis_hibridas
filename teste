@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in *.jpg; do
+  echo "Gerando thumbnail da imagem $i..."
+  convert -resize 120x120 $i thumbnail_$i
+  echo "<a href=\"$i\"> <img src=\"thumbnail_$i\"> </a>" >> index.html
+done
+
