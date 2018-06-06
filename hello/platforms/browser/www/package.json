@@ -1,0 +1,17 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "primeiro jogo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "phaser"
+  ],
+  "author": "andre",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.6.0"
+  }
+}
